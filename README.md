@@ -1,70 +1,67 @@
-# Getting Started with Create React App
+MERN Stack Tic-Tac-Toe 🕹️
+This is a simple Tic-Tac-Toe game I built using the MERN stack.
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+It's not just a simple frontend toy—it's a full-stack app. It's set up to save the winner of every single game to a MongoDB database and then pull that data to show a complete game history right on the page.
 
-## Available Scripts
+What it does:
+Lets you play a standard 3x3 game of Tic-Tac-Toe.
 
-In the project directory, you can run:
+Figures out when a player wins or when the game is a draw.
 
-### `npm start`
+Saves the result of every match (who won or if it was a draw) to the database.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Shows a running list of all past game results.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+What's under the hood?
+Frontend: React
 
-### `npm test`
+Backend: Node.js & Express
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Database: MongoDB
 
-### `npm run build`
+🚀 How to Get it Running
+You'll need to run two things at the same time: the backend server and the frontend app.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+1. The Backend (Server)
+First, let's get the server running.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Open your terminal and cd into the backend folder:
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Bash
 
-### `npm run eject`
+cd backend
+Install all the packages it needs:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+Bash
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+npm install
+Important: You'll need to make a .env file in this /backend folder. Inside that file, add your MONGODB_URI connection string so it can find your database.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+Start the server:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+Bash
 
-## Learn More
+npm start
+You should see a message in your terminal confirming it's connected to MongoDB and running on its port (like 5000).
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+2. The Frontend (The Game)
+Now, let's run the game itself.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Fire up a new, separate terminal (you need to leave the backend one running!).
 
-### Code Splitting
+cd into the frontend app's folder:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+Bash
 
-### Analyzing the Bundle Size
+cd frontend/tic-tac-toe
+Install its packages:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+Bash
 
-### Making a Progressive Web App
+npm install
+Run the app:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+Bash
 
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+npm run client
+This should automatically open the game in your browser at http://localhost:3000.
