@@ -65,3 +65,4 @@ Bash
 
 npm run client
 This should automatically open the game in your browser at http://localhost:3000.
+
